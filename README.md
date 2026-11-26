@@ -589,8 +589,6 @@ All three modules produce clean, standalone production artifacts:
 
 ## 12. Project Folder Structure
 
-```
-=======
 - **Backend Spring Boot Executable JAR:**\
   `backend/target/backend-0.0.1-SNAPSHOT.jar`
 - **Spring Cloud Gateway Executable JAR:**\
@@ -600,6 +598,8 @@ All three modules produce clean, standalone production artifacts:
   - `dist/index.html` (0.80 kB)
   - `dist/assets/index-D-8DhYaN.css` (13.51 kB)
   - `dist/assets/index-BmU-6oGj.js` (176.63 kB)
+```
+=======
 ## 12.Project Folder Structure
 
 
