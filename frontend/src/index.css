@@ -1,0 +1,156 @@
+:root {
+  /* ==========================================================================
+     PREMIUM ENTERPRISE WHITE THEME DESIGN TOKENS
+     ========================================================================== */
+  --bg-primary: #f8fafc;
+  --bg-secondary: #ffffff;
+  --bg-tertiary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --border-color: #e2e8f0;
+  --border-subtle: #edf2f7;
+  --border-glow: rgba(37, 99, 235, 0.25);
+
+  /* Deep Navy Sidebar System (Enterprise Command Center Contrast) */
+  --sidebar-bg: #0f172a;
+  --sidebar-surface: #1e293b;
+  --sidebar-border: #1e293b;
+  --sidebar-text: #f8fafc;
+  --sidebar-text-muted: #94a3b8;
+  --sidebar-active-bg: #2563eb;
+  --sidebar-hover-bg: #1e293b;
+
+  /* Typography Colors */
+  --text-primary: #0f172a;
+  --text-secondary: #334155;
+  --text-muted: #64748b;
+  --text-light: #ffffff;
+
+  /* Brand & Accents */
+  --accent-blue: #2563eb;
+  --accent-blue-hover: #1d4ed8;
+  --accent-cyan: #0284c7;
+  --accent-purple: #7c3aed;
+  --accent-emerald: #059669;
+
+  /* Risk Ratings (Crisp High-Contrast Enterprise Badges) */
+  --risk-low: #059669;
+  --risk-low-bg: #ecfdf5;
+  --risk-low-border: #a7f3d0;
+
+  --risk-medium: #2563eb;
+  --risk-medium-bg: #eff6ff;
+  --risk-medium-border: #bfdbfe;
+
+  --risk-high: #d97706;
+  --risk-high-bg: #fffbeb;
+  --risk-high-border: #fde68a;
+
+  --risk-critical: #dc2626;
+  --risk-critical-bg: #fef2f2;
+  --risk-critical-border: #fecaca;
+
+  --pass-color: #059669;
+  --fail-color: #dc2626;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.08), 0 8px 10px -6px rgba(0, 0, 0, 0.04);
+
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  background-image: 
+    radial-gradient(circle at 10% 10%, rgba(37, 99, 235, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 90% 20%, rgba(124, 58, 237, 0.03) 0%, transparent 45%),
+    radial-gradient(circle at 50% 90%, rgba(5, 150, 105, 0.02) 0%, transparent 50%),
+    linear-gradient(to bottom, #f8fafc, #edf2f7);
+  background-attachment: fixed;
+}
+
+code, pre, .font-mono {
+  font-family: var(--font-mono);
+}
+
+button {
+  cursor: pointer;
+  font-family: inherit;
+  border: none;
+  background: none;
+}
+
+input, select, textarea {
+  font-family: inherit;
+  color: inherit;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* Animations */
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+    box-shadow: 0 0 10px rgba(5, 150, 105, 0.4);
+  }
+  50% {
+    opacity: 0.6;
+    transform: scale(0.95);
+    box-shadow: 0 0 4px rgba(5, 150, 105, 0.2);
+  }
+}
+
+@keyframes spinSlow {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.spin-slow {
+  animation: spinSlow 8s linear infinite;
+}
+
+.live-beacon {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--accent-emerald);
+  animation: pulseGlow 2s infinite ease-in-out;
+}
