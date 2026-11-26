@@ -344,7 +344,6 @@ Ensure MySQL Server 8.0 or 9.0 is installed and running on port 3306.
 **8.1 Database Initialization**
 
 Execute the provided `setup_database.sql` script using Windows Command Prompt.
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 
 ```cmd
 mysql -u root -p < setup_database.sql
@@ -408,7 +407,6 @@ This script:
 
 **To stop all services:**
 
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 ```cmd
 stop_all.bat
 ```
@@ -424,8 +422,6 @@ Open three separate Command Prompt (`cmd.exe`) windows:
 Open three separate Windows Command Prompt windows.
 
 **Window 1: Start Backend Service (Port 8080)**
-
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 ```cmd
 cd backend
 java -jar target\backend-0.0.1-SNAPSHOT.jar
@@ -533,7 +529,7 @@ Follow this scripted 5-minute walkthrough during your project viva/presentation:
    - Click the **"Centralized Audit Logs"** tab in the admin navigation bar.
    - Show the live immutable security ledger populated with real events from the Gateway (`LOGIN_SUCCESS`, `ORDER_CREATED`, `ACCESS_DENIED`, etc.).
    - Use the search bar to filter by `alice_dev` or `403` to show tamper-evident auditing of security denial events.
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 
 ---
 
@@ -780,7 +776,6 @@ When manually creating your project submission `.zip` file for evaluation, follo
 - `mysql_runtime/` (local machine database files; teammates should use their own MySQL instance)
 - `.git/` (git version history if not required for submission)
 - Intermediate build junk (e.g. `backend/target/classes`, `gateway/target/classes`, except for the `.jar` files)
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 
 ---
 
