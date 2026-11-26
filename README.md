@@ -809,14 +809,3 @@ When manually creating your project submission `.zip` file for evaluation, follo
 > 3. **CORS Configuration:** Set `CORS_ALLOWED_ORIGINS` to the exact fully-qualified domain name(s) of your production web frontends. Never enable wildcard `*` with credentials.
 > 4. **Network Perimeter Isolation:** In production, place the Backend service in a private subnet. Configure firewall/VPC rules so Backend port `8080` only accepts traffic from the Spring Cloud Gateway IP.
 > 5. **HTTPS Termination:** Terminate TLS 1.3 at the Gateway or reverse proxy load balancer (NGINX/Cloudflare) to ensure all in-transit tokens and payloads are encrypted.
-=======
-**Important**
-
-When deploying this architecture into staging or production:
-
-1. **Externalize All Secrets:** Never rely on default property values. Supply `DB_PASSWORD`, `JWT_SECRET`, and `INTERNAL_GATEWAY_KEY` through container environment variables, HashiCorp Vault, or cloud secret managers (AWS Secrets Manager, GCP Secret Manager).
-2. **Cryptographic Key Strength:** Ensure `JWT_SECRET` is generated using at least 256 bits of cryptographically secure entropy (`openssl rand -base64 32`).
-3. **CORS Configuration:** Set `CORS_ALLOWED_ORIGINS` to the exact fully-qualified domain name(s) of your production web frontends. Never enable wildcard `*` with credentials.
-4. **Network Perimeter Isolation:** In production, place the Backend service in a private subnet. Configure firewall/VPC rules so Backend port `8080` only accepts traffic from the Spring Cloud Gateway IP.
-5. **HTTPS Termination:** Terminate TLS 1.3 at the Gateway or reverse proxy load balancer (NGINX/Cloudflare) to ensure all in-transit tokens and payloads are encrypted.
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
