@@ -8,14 +8,12 @@
 In modern microservices and distributed systems, APIs are exposed across multiple domains with varying security requirements. Inconsistent security controls—such as missing authentication, lack of authorization guardrails, absent rate limiting, or omitted audit trails—leave routes vulnerable to unauthorized access, brute-force attacks, and data leakage.
 
 This project delivers a production-ready, defense-in-depth API Security Gateway architecture featuring:
-<<<<<<< HEAD
+
 1. **Perimeter Traffic Defense:** Centralized gateway enforcement of IP filtering, rate limiting, and CORS.
 2. **Identity & Access Management:** JWT authentication and fine-grained Role-Based Access Control (RBAC).
 3. **Input Sanitization:** Strong schema and Jakarta Bean Validation.
 4. **Accountability:** Centralized, immutable security audit logging in MySQL.
 5. **Security Intelligence & Governance:** The **Adaptive Route Security Analyzer (ARSA)**—an automated engine with an interactive React dashboard that audits all configured routes, calculates compliance scores, categorizes risk tiers, detects control gaps, and generates actionable remediation guidance.
-
----
 
 ## 2. System Architecture
 
@@ -60,7 +58,6 @@ This project delivers a production-ready, defense-in-depth API Security Gateway 
 +-------------------------------+             +-------------------------------+
 ```
 
----
 
 ## 3. Technologies Used
 
@@ -352,8 +349,6 @@ Execute the provided `setup_database.sql` script using Windows Command Prompt.
 ```cmd
 mysql -u root -p < setup_database.sql
 ```
-
-<<<<<<< HEAD
 Or execute directly in MySQL console:
 ```sql
 CREATE DATABASE IF NOT EXISTS `api_security_db` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
@@ -418,7 +413,6 @@ This script:
 stop_all.bat
 ```
 
-<<<<<<< HEAD
 ### Option B: Manual Step-by-Step Startup (Windows CMD)
 
 Open three separate Command Prompt (`cmd.exe`) windows:
@@ -436,7 +430,6 @@ Open three separate Windows Command Prompt windows.
 cd backend
 java -jar target\backend-0.0.1-SNAPSHOT.jar
 ```
-<<<<<<< HEAD
 *(Or compile & run directly: `mvn spring-boot:run`)*
 
 **Window 2: Start the Spring Cloud Gateway (Port 8081)**
@@ -450,12 +443,11 @@ mvn spring-boot:run
 
 **Window 2: Start Spring Cloud Gateway (Port 8081)**
 
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 ```cmd
 cd gateway
 java -jar target\gateway-0.0.1-SNAPSHOT.jar
 ```
-<<<<<<< HEAD
+
 *(Or compile & run directly: `mvn spring-boot:run`)*
 
 **Window 3: Start the React + Vite Frontend (Port 5174)**
@@ -469,13 +461,11 @@ mvn spring-boot:run
 
 **Window 3: Start React Frontend (Port 5174)**
 
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 ```cmd
 cd frontend
 npm run dev
 ```
 
-<<<<<<< HEAD
 Then open `http://localhost:5174/` in your browser.
 
 ---
@@ -487,14 +477,12 @@ Open the application in your browser:
 
 ---
 
-
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
 ## 10. Step-by-Step Demonstration Plan for Madam & HOD Sir
 
 Follow this scripted 5-minute walkthrough during your project viva/presentation:
 
 1. **Architecture Introduction (1 min):**
-<<<<<<< HEAD
+
    * Open `http://localhost:5174/`. Explain the 3-tier perimeter architecture: React Frontend $\rightarrow$ Spring Cloud Gateway (:8081) $\rightarrow$ Spring Boot Backend (:8080) $\rightarrow$ MySQL (:3306).
    * Highlight the 6 uniform security controls: JWT Auth, RBAC, Bean Validation, Token Bucket Rate Limiting, IP Filtering, and Centralized Audit Logging.
 
@@ -552,10 +540,10 @@ Follow this scripted 5-minute walkthrough during your project viva/presentation:
 ## 10. Automated Test Results
 
 The test suite contains **91 automated tests** covering security, token lifecycle, role hierarchies, input validation boundaries, rate limiting algorithms, IP CIDR matching, and UI rendering:
-<<<<<<< HEAD
+
 
 =======
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 ```
 ================================================================================
           PROJECT AUTOMATED TEST SUITE SUMMARY
@@ -567,7 +555,7 @@ The test suite contains **91 automated tests** covering security, token lifecycl
   TOTAL AUTOMATED TESTS                                       : 91 / 91 (100%)
   FAILURES / ERRORS                                           : 0
 ================================================================================
-<<<<<<< HEAD
+
 ```
 
 To run all automated tests:
@@ -583,7 +571,7 @@ To run all automated tests:
 - **Backend Tests:** `cd backend && mvn test`
 - **Gateway Tests:** `cd gateway && mvn test`
 - **Frontend Tests:** `cd frontend && npm test`
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 
 ---
 
@@ -591,7 +579,6 @@ To run all automated tests:
 
 All three modules produce clean, standalone production artifacts:
 
-<<<<<<< HEAD
 * **Backend Spring Boot Executable JAR:**  
   `backend/target/backend-0.0.1-SNAPSHOT.jar`
 * **Spring Cloud Gateway Executable JAR:**  
@@ -621,7 +608,7 @@ All three modules produce clean, standalone production artifacts:
 
 
 ```text
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 API Gateway/
 ├── .env.example                          # Environment configuration template
 ├── README.md                             # Comprehensive project documentation
@@ -678,20 +665,18 @@ API Gateway/
         └── test/                         # 6 Vitest UI component & RBAC guard tests
 ```
 
-<<<<<<< HEAD
 ---
 =======
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 
 ## 13. Teammate Setup & Prerequisites (Running on Another Windows Laptop)
 
 If sharing this project folder with teammates to run on their Windows machine, ensure they have the following prerequisites installed:
 
 ### Prerequisites:
-<<<<<<< HEAD
 =======
 
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 1. **Java Development Kit (JDK 17 or JDK 21):**
    - Check in CMD: `java -version`
 2. **Apache Maven (3.8+ or 3.9+):**
@@ -702,7 +687,7 @@ If sharing this project folder with teammates to run on their Windows machine, e
    - Service name: `MySQL80` or `MySQL90` (can be started via `net start MySQL80` or `net start MySQL90` in Administrator CMD).
 
 ### Teammate Setup Steps (CMD):
-<<<<<<< HEAD
+
 1. **Initialize Database:**
    ```cmd
    mysql -u root -p < setup_database.sql
@@ -748,7 +733,7 @@ If sharing this project folder with teammates to run on their Windows machine, e
 4. **Launch Everything:** Double-click `start_all.bat` or run:
 
    start_all.bat
->>>>>>> f0db767a3da6f087cf82a2172fc0c28d5a12ecfb
+
 
 ---
 
@@ -757,7 +742,7 @@ If sharing this project folder with teammates to run on their Windows machine, e
 When manually creating your project submission `.zip` file for evaluation, follow these best practices to keep the archive compact and clean:
 
 ### Folders & Files to INCLUDE:
-<<<<<<< HEAD
+
 * `backend/` (all source files `src/`, `pom.xml`, `mvnw`, `mvnw.cmd`)
 * `backend/target/backend-0.0.1-SNAPSHOT.jar` (the compiled production executable)
 * `gateway/` (all source files `src/`, `pom.xml`, `mvnw`, `mvnw.cmd`)
@@ -801,7 +786,6 @@ When manually creating your project submission `.zip` file for evaluation, follo
 
 ## 15. Production Deployment & Security Guidelines
 
-<<<<<<< HEAD
 > [!IMPORTANT]
 > When deploying this architecture into staging or production:
 > 1. **Externalize All Secrets:** Never rely on default property values. Supply `DB_PASSWORD`, `JWT_SECRET`, and `INTERNAL_GATEWAY_KEY` through container environment variables, HashiCorp Vault, or cloud secret managers (AWS Secrets Manager, GCP Secret Manager).
